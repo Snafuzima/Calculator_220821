@@ -16,4 +16,5 @@
     <string name="key_plus">+</string>
     <string name="key_minus">-</string>
     <string name="key_result">=</string>
+    <string name="enter_the_values">Enter the values</string>
 </resources>
