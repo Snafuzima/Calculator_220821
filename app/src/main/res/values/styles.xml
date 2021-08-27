@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LandCalcButton">
+        <item name="android:layout_width">@dimen/land_button_width</item>
+        <item name="android:layout_height">@dimen/land_button_height</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:textColor">@color/txt_color</item>
+        <item name="android:backgroundTint">@color/butt_color</item>
+    </style>
+
+    <style name="LandCalcButtonResult" parent="LandCalcButton">
+        <item name="android:layout_margin">@dimen/button_margin_result</item>
+    </style>
+
+    <style name="CalcButton">
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:backgroundTint">@color/butt_color</item>
+        <item name="android:textColor">@color/txt_color</item>
+    </style>
+
+    <style name="CalcButtonResult" parent="CalcButton">
+        <item name="android:layout_margin">@dimen/button_margin_result</item>
+    </style>
+
+    <style name="TxtPreview">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textSize">@dimen/txt_size</item>
+    </style>
+
+</resources>
