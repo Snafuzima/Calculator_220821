@@ -28,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        if (savedInstanceState==null) {
+        if (savedInstanceState == null) {
 
         } else {
             Operations.getResult();
@@ -39,40 +37,36 @@ public class MainActivity extends AppCompatActivity {
         initCalculationField();
         initButtons();
 
-
-
-
-
     }
 
-
-
     private void initButtons() {
-        findViewById(R.id.key_0).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_1).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_2).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_3).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_4).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_5).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_6).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_7).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_8).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_9).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_plus).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_minus).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_multi).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_div).setOnClickListener(new ClickHandler());
-        findViewById(R.id.key_dot).setOnClickListener(new ClickHandler());
+        ClickHandler clickHandler = new ClickHandler();
+
+        findViewById(R.id.key_0).setOnClickListener(clickHandler);
+        findViewById(R.id.key_1).setOnClickListener(clickHandler);
+        findViewById(R.id.key_2).setOnClickListener(clickHandler);
+        findViewById(R.id.key_3).setOnClickListener(clickHandler);
+        findViewById(R.id.key_4).setOnClickListener(clickHandler);
+        findViewById(R.id.key_5).setOnClickListener(clickHandler);
+        findViewById(R.id.key_6).setOnClickListener(clickHandler);
+        findViewById(R.id.key_7).setOnClickListener(clickHandler);
+        findViewById(R.id.key_8).setOnClickListener(clickHandler);
+        findViewById(R.id.key_9).setOnClickListener(clickHandler);
+        findViewById(R.id.key_plus).setOnClickListener(clickHandler);
+        findViewById(R.id.key_minus).setOnClickListener(clickHandler);
+        findViewById(R.id.key_multi).setOnClickListener(clickHandler);
+        findViewById(R.id.key_div).setOnClickListener(clickHandler);
+        findViewById(R.id.key_dot).setOnClickListener(clickHandler);
     }
 
     private void initCalculationField() {
-        calculationField=findViewById(R.id.field);
+        calculationField = findViewById(R.id.field);
     }
 
     //Доделать кнопки. Каждое число заменяет предыдущее, сделать чтобы выводилось строкой.
 
 
-     class ClickHandler implements View.OnClickListener {
+    class ClickHandler implements View.OnClickListener {
 
         @SuppressLint("NonConstantResourceId")
         @Override
@@ -81,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             switch (view.getId()) {
 
                 case R.id.key_dot:
-                    printChar(calculationField,".");
+                    printChar(calculationField, ".");
                     break;
 
                 case R.id.key_result:
@@ -144,19 +138,15 @@ public class MainActivity extends AppCompatActivity {
                     printDigit(calculationField, 0);
                     break;
 
-
             }
-
-
-
         }
 
         private void printDigit(TextView field, int digit) {
             field.append(String.format(Locale.getDefault(), "%d", digit));
         }
 
-         private void printChar(TextView field, String symbol) {
-             field.append(String.format(Locale.getDefault(),"%s",symbol));
-         }
+        private void printChar(TextView field, String symbol) {
+            field.append(String.format(Locale.getDefault(), "%s", symbol));
+        }
     }
 }
